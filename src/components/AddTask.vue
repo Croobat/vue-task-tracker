@@ -13,7 +13,7 @@
       <input type="checkbox" v-model="reminder" name="reminder" />
     </div>
 
-      <input type="submit" value="Save Task" class="btn btn-block" />
+    <input type="submit" value="Save Task" class="btn btn-block" />
   </form>
 </template>
 
@@ -58,12 +58,15 @@ export default {
 .add-form {
   margin-bottom: 40px;
 }
+
 .form-control {
   margin: 20px 0;
 }
+
 .form-control label {
   display: block;
 }
+
 .form-control input {
   width: 100%;
   height: 40px;
@@ -71,14 +74,17 @@ export default {
   padding: 3px 7px;
   font-size: 17px;
 }
+
 .form-control-check {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .form-control-check label {
   flex: 1;
 }
+
 .form-control-check input {
   flex: 2;
   height: 20px;

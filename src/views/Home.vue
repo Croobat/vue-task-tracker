@@ -1,10 +1,6 @@
 <template>
   <AddTask v-show="showAddTask" @add-task="addTask" />
-  <Tasks
-    @toggle-reminder="toggleReminder"
-    @delete-task="deleteTask"
-    :tasks="tasks"
-  />
+  <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
 </template>
 
 <script>
@@ -53,7 +49,7 @@ export default {
 
     async toggleReminder(id) {
       const taskToToggle = await this.fetchTask(id)
-      const updTask = {...taskToToggle, reminder: !taskToToggle.reminder}
+      const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder }
 
       const res = await fetch(`api/tasks/${id}`, {
         method: 'PUT',
@@ -67,8 +63,8 @@ export default {
 
       this.tasks = this.tasks.map((task) =>
         task.id === id
-        ? {...task, reminder: data.reminder}
-        : task
+          ? { ...task, reminder: data.reminder }
+          : task
       )
     },
 
